@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.11.18.2] - 2026-03-24
+
+### Fixed
+
+- **Windows browse daemon fixed.** The browse server wouldn't start on Windows because Bun requires `stdio` as an array (`['ignore', 'ignore', 'ignore']`), not a string (`'ignore'`). Fixes #448, #454, #458.
+
+## [0.11.18.1] - 2026-03-24
+
+### Changed
+
+- **One decision per question — everywhere.** Every skill now presents decisions one at a time, each with its own focused question, recommendation, and options. No more wall-of-text questions that bundle unrelated choices together. This was already enforced in the three plan-review skills; now it's a universal rule across all 23+ skills.
+
 ## [0.11.18.0] - 2026-03-24 — Ship With Teeth
 
 `/ship` and `/review` now actually enforce the quality gates they've been talking about. Coverage audit becomes a real gate (not just a diagram), plan completion gets verified against the diff, and verification steps from your plan run automatically.
